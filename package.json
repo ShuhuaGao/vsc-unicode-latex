@@ -1,13 +1,13 @@
 {
-  "name": "unicode-math",
-  "displayName": "Unicode Math",
-  "description": "Insert unicode symbols for latex names",
-  "version": "1.2.1",
-  "publisher": "studykit",
+  "name": "vsc-unicode-latex",
+  "displayName": "Unicode LaTeX Input",
+  "description": "Insert unicode symbols using LaTeX-like abbreviations",
+  "version": "1.3.0",
+  "publisher": "shuhua",
   "author": {
-    "name": "studykit"
+    "name": "gaoshuhua"
   },
-  "repository": "studykit/unicode-latex",
+  "repository": "ShuhuaGao/vsc-unicode-latex",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -21,8 +21,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "unicode-math.insertMathSymbol",
-        "title": "Unicode: Insert Math Symbol"
+        "command": "unicode-input.insertMathSymbol",
+        "title": "Unicode Input: Insert Math Symbol"
       }
     ]
   },

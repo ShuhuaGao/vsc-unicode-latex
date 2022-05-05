@@ -1,13 +1,19 @@
-# Unicode Latex for vscode
+# Unicode input for vs code using LaTeX-like abbreviations
 
-This is a fork of [ojsheikh/unicode-latex](https://github.com/ojsheikh/unicode-latex). 
+A visual studio code extension that allows the insertion of unicode symbols from the latex names of those symbols. This extension is developed based on [studykit/unicode-latex](https://github.com/studykit/unicode-latex), which itself is a fork of [ojsheikh/unicode-latex](https://github.com/ojsheikh/unicode-latex).
 
-A visual studio code extension that allows the insertion of unicode symbols from the latex names of those symbols. The list of symbols is currently generated from the Julia programming language's REPL's latex completions.
+The list of symbols is currently generated from the Julia programming language's REPL's latex completions ([see the symbol list here](https://docs.julialang.org/en/v1/manual/unicode-input/)).
 
 ## Usage
 
-When editing a plaintext file, this extension provides autocompletions for latex symbols - inserting the equivalent unicode character for the selected completion. Completions are triggered on ','.
+- Completions are triggered on backslack '\\'. For example, type `\alpha`, an autocompletion will pop up.
+- Supported document types are specified in *extension.ts*, which currently include
 
-To insert a symbol, simply execute the `Unicode: Insert Math Symbol` command and type in the name of your desired symbol or select it from the drop-down list.
-
-![Insertion Demo](https://raw.githubusercontent.com/oijazsh/unicode-latex/master/demo-insert.gif)
+  ```typescript
+  const selector: vscode.DocumentSelector = [
+        'plaintext', 'markdown', 'coq', 'python', 'java', 'haskell', 
+        'sml', 'ocaml', 'rmd', 'r', 'txt', 'typescript', 'html', 'yaml', 'javascript',
+        'groovy', 'go', 'clojure', 'fsharp', 'asciidoc', 'c', 'cpp', 'toml', 'json', 'textile',
+        'csv', 'csharp', 'ini', 'jsonc', 'objective-c', 'markdown', 'xml'
+    ];
+  ```

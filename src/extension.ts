@@ -7,17 +7,18 @@ export function activate(context: vscode.ExtensionContext) {
     const pickOptions: vscode.QuickPickOptions = { matchOnDescription: true };
     const latexPickItems: vscode.QuickPickItem[] = loadPickItems();
 
-    let insertion = vscode.commands.registerCommand('unicode-math.insertMathSymbol', () => {
+    let insertion = vscode.commands.registerCommand('unicode-input.insertMathSymbol', () => {
         vscode.window.showQuickPick(latexPickItems, pickOptions).then(insertSymbol);
     });
 
     const selector: vscode.DocumentSelector = [
         'plaintext', 'markdown', 'coq', 'python', 'java', 'haskell', 
-        'sml', 'ocaml', 'rmd', 'r', 'tex', 'typescript', 'html', 'yaml', 'javascript',
-        'groovy', 'go', 'clojure', 'fsharp', 'asciidoc'
+        'sml', 'ocaml', 'rmd', 'r', 'txt', 'typescript', 'html', 'yaml', 'javascript',
+        'groovy', 'go', 'clojure', 'fsharp', 'asciidoc', 'c', 'cpp', 'toml', 'json', 'textile',
+        'csv', 'csharp', 'ini', 'jsonc', 'objective-c', 'markdown', 'xml'
     ];
-    const provider = new LatexCompletionItemProvider(',', latexSymbols);
-    const completionSub = vscode.languages.registerCompletionItemProvider(selector, provider, ',');
+    const provider = new LatexCompletionItemProvider('\\', latexSymbols);
+    const completionSub = vscode.languages.registerCompletionItemProvider(selector, provider, '\\');
 
     context.subscriptions.push(insertion);
     context.subscriptions.push(completionSub);
@@ -66,7 +67,7 @@ class LatexCompletionItemProvider implements vscode.CompletionItemProvider {
         : vscode.CompletionItem[]
     {
         // , /\/[\^_]?[^\s\\]*/
-        const range = doc.getWordRangeAtPosition(pos, /,[\^_]?[^\s\\]*/);
+        const range = doc.getWordRangeAtPosition(pos, /\\[\^_]?[^\s\\]*/);
         if (!range) {
             return [];
         }
