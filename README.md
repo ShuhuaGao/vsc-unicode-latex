@@ -1,8 +1,11 @@
-# Unicode input for vs code using LaTeX-like abbreviations
+# Unicode input for vs code using LaTeX-like abbreviation
 
 A visual studio code extension that allows the insertion of unicode symbols from the latex names of those symbols. This extension is developed based on [studykit/unicode-latex](https://github.com/studykit/unicode-latex), which itself is a fork of [ojsheikh/unicode-latex](https://github.com/ojsheikh/unicode-latex).
 
 The list of symbols is currently generated from the Julia programming language's REPL's latex completions ([see the symbol list here](https://docs.julialang.org/en/v1/manual/unicode-input/)).
+
+## Install
+Install from the [VSC marketplace](https://marketplace.visualstudio.com/items?itemName=gao-shuhua.vsc-unicode-latex). 
 
 ## Usage
 
