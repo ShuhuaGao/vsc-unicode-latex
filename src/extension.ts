@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
         'plaintext', 'markdown', 'coq', 'python', 'java', 'haskell', 
         'sml', 'ocaml', 'rmd', 'r', 'txt', 'typescript', 'html', 'yaml', 'javascript',
         'groovy', 'go', 'clojure', 'fsharp', 'asciidoc', 'c', 'cpp', 'toml', 'json', 'textile',
-        'csv', 'csharp', 'ini', 'jsonc', 'objective-c', 'markdown', 'xml'
+        'csv', 'csharp', 'ini', 'jsonc', 'objective-c', 'markdown', 'xml', 'scala'
     ];
     const provider = new LatexCompletionItemProvider('\\', latexSymbols);
     const completionSub = vscode.languages.registerCompletionItemProvider(selector, provider, '\\');
