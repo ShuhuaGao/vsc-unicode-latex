@@ -2,7 +2,7 @@
   "name": "vsc-unicode-latex",
   "displayName": "Unicode LaTeX Input",
   "description": "Insert unicode symbols using LaTeX-like abbreviations",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "publisher": "gao-shuhua",
   "author": {
     "name": "gaoshuhua"
@@ -14,6 +14,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "images/icon.jpg",
   "activationEvents": [
     "onStartupFinished"
   ],
